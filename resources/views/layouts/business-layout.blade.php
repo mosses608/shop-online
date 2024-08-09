@@ -52,7 +52,7 @@
            @yield('content')
        </main>
        <footer>
-            <hr><hr><hr>
+            <!-- <hr><hr><hr>
             <center>
                 <br>
             <table class="footer-table-t">
@@ -80,68 +80,14 @@
                 <a href="#" id="fab-facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" id="fab-tiktok"><i class="fab fa-tiktok"></i></a>
             </div>
-            </center>
-            <button class="footer-btn">
+            </center> -->
+            <!-- <button class="footer-btn">
                 <span class="comment-wrapper"><i class="fa fa-comment"></i></span><hr><hr><hr>
                 <span class="scrollToTop" onclick="scrollToTop()">&#8593;</span>
-            </button>
+            </button> -->
        </footer>
 
-
-       <script>
-            var imageSlider = document.querySelectorAll('.container-wrapper img');
-            let initiaLSlide=0;
-            var intervalTime = 5000;
-
-            function showNextSlideImage(){
-                imageSlider[initiaLSlide].style.display='none';
-                initiaLSlide++;
-
-                if(initiaLSlide>=imageSlider.length){
-                    initiaLSlide=0;
-                }
-
-                imageSlider[initiaLSlide].style.display='block';
-            }
-
-            setInterval(showNextSlideImage,intervalTime);
-       </script>
-
-
 <script>
-    const imagesliderchanger = document.querySelectorAll('.container-wrapper img');
-    let currentIndex = 0;
-
-    function showNextIndex(index) {
-    
-    imagesliderchanger.forEach(function(image) {
-        image.style.display = 'none';
-    });
-
-    
-    imagesliderchanger[index].style.display = 'block';
-}
-
-    function changeSlide(offset) {
-
-    let newIndex = currentIndex + offset;
-
-    if (newIndex < 0) {
-        newIndex = imagesliderchanger.length - 1;
-    } else if (newIndex >= imagesliderchanger.length) {
-        newIndex = 0;
-    }
-
-    showNextIndex(newIndex);
-
-    
-    currentIndex = newIndex;
-}
-
-
-showNextIndex(currentIndex);
-
-
 function scrollToTop(){
     window.scrollTo({
         top:0,
@@ -153,42 +99,6 @@ function scrollToTop(){
 
 
 <script>
-    const countries = [
-        "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina",
-        "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados",
-        "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana",
-        "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon",
-        "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo",
-        "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica",
-        "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea",
-        "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany",
-        "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras",
-        "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Ivory Coast",
-        "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait", "Kyrgyzstan", "Laos",
-        "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg",
-        "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania",
-        "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco",
-        "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua",
-        "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Panama",
-        "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania",
-        "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa",
-        "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone",
-        "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan",
-        "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan",
-        "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan",
-        "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay",
-        "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
-    ];
-
-    const countrySelect = document.getElementById('country');
-
-    countries.forEach(function(country) {
-        const option = document.createElement('option');
-        option.value = country;
-        option.textContent = country;
-        countrySelect.appendChild(option);
-    });
-
     function showCategoryelect(){
         document.querySelector('.category-all-component').classList.toggle('active');
     }

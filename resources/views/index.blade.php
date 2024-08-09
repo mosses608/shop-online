@@ -4,9 +4,9 @@
 <br><br><br><br>
 <center>
     <div class="top-nav-bar-md5">
-        <a href="#"><i class="fas fa-play"></i> Get Started</a>
+        <a href="/explore"><i class="fas fa-play"></i> Get Started</a>
         <a href="#"><i class="fas fa-question-circle"></i> Help Center</a>
-        <a href="#"><i class="fas fa-list"></i> All Categories</a>
+        <a href="#" class="category-all-md5" onclick="showCategoryelect()"><i class="fas fa-list"></i> All Categories</a>
         <a href="#"><i class="fa fa-star"></i> Trendings</a>
     </div>
     <div class="container-wrapper">
@@ -20,6 +20,21 @@
     </div>
 </center>
 <h1 id="message-pop-md5">Let's Experience <br> Fast, Safe & Secure <br> Shoppings with <br> Kakala <i class="fas fa-circle icon-dot" style="font-size:16px"></i> <i class="fas fa-circle icon-dot" style="font-size:16px"></i> <i class="fas fa-circle icon-dot" style="font-size:16px"></i> <i class="fas fa-circle icon-dot" style="font-size:16px"></i> </h1>
+
+
+<div class="category-all-component">
+    <a href="/explore">All</a>
+    <a href="#">Baby</a>
+    <a href="#">Beauty & Personal Care</a>
+    <a href="#">Books</a>
+    <a href="#">Boys Fashions</a>
+    <a href="#">Computers</a>
+    <a href="#">Electronics</a>
+    <a href="#">Girls Fashion</a>
+    <a href="#">Home & Kitchen</a>
+    <a href="#">Sports & Outdoors</a>
+    <a href="#">Software</a>
+</div>
 
 <br>
 <center>

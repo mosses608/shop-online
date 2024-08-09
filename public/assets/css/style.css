@@ -278,6 +278,8 @@
 
  .social-media-platform{
     width: 100%;
+    background-color: #000;
+    padding: 20px;
  }
  .social-media-platform a{
     padding: 20px;
@@ -290,9 +292,271 @@
     color: rgb(214, 77, 27);
  }
  #fab-youtube{
-    color: red;
+    color: rgb(255, 0, 0);
  }
 
  #fab-facebook{
     color: #0000FF;
+ }
+ #fab-x{
+   color: maroon;
+ }
+
+.new-md5-wrapper{
+   width: 50%;
+}
+
+.new-md5-wrapper span{
+   font-size: 12px;
+   color: red;
+   float: left;
+   font-weight: 400;
+   font-style: italic;
+}
+
+.new-md5-wrapper label{
+   float: left;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+ .new-md5-wrapper select{
+   padding: 6px;
+   width: 100%;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 14px;
+ }
+
+ .new-md5-wrapper input{
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   padding: 6px;
+   width: 100%;
+   font-size: 14px;
+ }
+
+ .new-md5-wrapper input:focus{
+   outline: none;
+   box-shadow: none;
+   border: none;
+   border-bottom: 1px solid rgb(162, 195, 224);
+ }
+
+ .new-md5-wrapper select:focus{
+   outline: none;
+   box-shadow: none;
+   border: none;
+   border-bottom: 1px solid rgb(162, 195, 224);
+ }
+
+ .junct-wrapp p{
+   float: left;
+   font-size: 14px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
+ .junct-wrapp p a{
+   cursor: pointer;
+   color: #0000FF;
+   text-decoration: none;
+ }
+
+ .btn-submit{
+   float: left;
+   padding: 6px;
+   font-size: 14px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   border: none;
+   cursor: pointer;
+   background-color: #B81D33;
+   color: #FFFFFF;
+ }
+
+ .all-setup-done{
+   background-color: inherit;
+   border: none;
+   font-size: 15px;
+   padding: 6px;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+ }
+
+ .all-setup-done a{
+   color: #0000FF;
+ }
+
+
+ .category-all-component{
+   position: absolute;
+   right: 35%;
+   top: 22%;
+   z-index: 1;
+   border-radius: 4px;
+   display: none;
+   background-color: #FFFFFF;
+   box-shadow: 0 0 2px rgba(0,0,0,0.2);
+ }
+
+
+ .category-all-component a{
+   display: block;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   padding: 5px 6px;
+   font-size: 14px;
+   text-decoration: none;
+ }
+
+ .category-all-component a:hover{
+   color: #B81D33;
+ }
+
+ .catalog-wrapper{
+   width: 100%;
+   padding: 6px;
+   background-color: #f8f0f0;
+ }
+
+ @keyframes fashMessage{
+   from{
+      transform: translateX(120%);
+   }
+   to{
+      transform: 0%;
+   }
+ }
+
+ .flash-message-builder{
+   animation: fashMessage 1s forwards;
+   position: absolute;
+   right: 0%;
+   box-shadow: 0 0 5px rgba(0,0,0,0.2);
+   top: 14%;
+ }
+ .flash-message-builder p{
+   float: left;
+   padding: 6px;
+   font-weight: 400;
+   font-size: 13px;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+ }
+
+ .flash-message-builder button{
+   float: right;
+   padding: 6px;
+   font-size: 13px;
+   border: none;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   background-color: inherit;
+   color: red;
+ }
+
+ #alternative-method{
+   border-radius: 10px;
+   color: #B81D33;
+   box-shadow: 0 0 4px rgba(0,0,0,0.2);
+   width: 50%;
+ }
+
+ #alternative-method a{
+   padding: 10px;
+   font-size: 40px;
+   width: 100%;
+   text-decoration: none;
+   cursor: pointer;
+ }
+
+ #alt-later{
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
+ .side-main-navbar-wrapper-md5{
+   float: left;
+   top: 14.2%;
+   width: 15%;
+   position: fixed;
+   box-shadow: 0 0 10px rgba(0,0,0,0.6);
+   height: 1000px;
+ }
+
+.dashboard-home,.comment-manager,.profile-nav-manager,.product-manager,.hidden-product-closet,.report-analytics-md5,.logout-side-nav{
+   padding: 6px;
+   width: 1005;
+}
+
+.dashboard-home,.comment-manager,.profile-nav-manager,.product-manager,.hidden-product-closet,.report-analytics-md5,.logout-side-nav a{
+   width: 100%;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logout-invalidate button{
+   width: 100%;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#middle-nav{
+   float: left;
+   margin-left: 6%;
+}
+
+#left-side-nav{
+   float: left;
+}
+
+.right-nav{
+   float: right;
+}
+
+.side-main-navbar-wrapper-md5 a:hover{
+   color: #B81D33;
+}
+
+.side-main-navbar-wrapper-md5 button:hover{
+   color: #B81D33;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hidden{
+   display: none;
+}
+
+ .active{
+   display: block;
  }
