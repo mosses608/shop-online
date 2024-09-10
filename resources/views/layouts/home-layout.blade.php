@@ -38,7 +38,11 @@
                 <div class="minro-component">
                     <button class="lang-changer"><i class="fa fa-language"></i></button>
                     <button class="user-account"><i class="fa fa-user"></i></button>
+                    @auth('web')
+                    <button class="sign-up-btn"><a href="/business-dashboard">Return To Dashboard</a></button>
+                    @else
                     <button class="sign-up-btn"><a href="/register" style="text-decoration:none; color:#FFFFFF;">Sign Up</a></button>
+                    @endauth
                 </div>
             </div><br><br>
 
@@ -82,6 +86,7 @@
             </div>
             </center>
             <button class="footer-btn">
+                <span class="message-cover"><i class="fas fa-envelope"></i></span><hr><hr><hr>
                 <span class="comment-wrapper"><i class="fa fa-comment"></i></span><hr><hr><hr>
                 <span class="scrollToTop" onclick="scrollToTop()">&#8593;</span>
             </button>

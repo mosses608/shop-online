@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\Models\Role;
 use App\Models\User;
+use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -13,10 +18,14 @@ class UserController extends Controller
         return view('index');
     }
     public function register_new(){
-        return view('register');
+        $roles = Role::all();
+        return view('register', compact('roles'));
     }
     public function explore(){
-        return view('explore');
+        $nowDate = Carbon::now()->format('Y-m-d');
+        $exploreAllProducts = Product::latest()->paginate(5);
+        $allproducts = Product::latest()->get();
+        return view('explore', compact('allproducts','exploreAllProducts','nowDate'));
     }
     public function login(){
         return view('user-login');
@@ -80,5 +89,17 @@ class UserController extends Controller
 
     public function business_dashboard(){
         return view('/business-dashboard');
+    }
+
+    public function post_product(){
+        $categories = Category::all();
+        $products = Product::filter(request(['search']))->paginate(10);
+        return view('post-product', compact('products','categories'));
+    }
+
+    public function auth_logout(Request $request){
+        Auth::guard('web')->logout();
+        $request->session()->invalidate();
+        return redirect('/user-login')->with('flash_msg','Logged out successfully!');
     }
 }

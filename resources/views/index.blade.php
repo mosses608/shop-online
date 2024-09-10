@@ -24,14 +24,17 @@
 
 <div class="category-all-component">
     <a href="/explore">All</a>
-    <a href="#">Baby</a>
+    <a href="#">Babies Fashion</a>
+    <a href="#">Bags</a>
     <a href="#">Beauty & Personal Care</a>
     <a href="#">Books</a>
-    <a href="#">Boys Fashions</a>
     <a href="#">Computers</a>
     <a href="#">Electronics</a>
-    <a href="#">Girls Fashion</a>
+    <a href="#">Ladies Fashion</a>
+    <a href="#">Men's Fashions</a>
     <a href="#">Home & Kitchen</a>
+    <a href="#">Shoes</a>
+    <a href="#">Spare Parts</a>
     <a href="#">Sports & Outdoors</a>
     <a href="#">Software</a>
 </div>

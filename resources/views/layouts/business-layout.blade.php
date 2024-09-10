@@ -24,7 +24,7 @@
         <header class="ajax-wrapper-md-5" id="ajax-wrapper-md-5" style="background-color:#FFFFFF;">
             <a href="/"><img src="{{asset('assets/images/kakalaLogo.png')}}" alt="Logo"></a>
             <div class="centered-ajax-wrapper">
-                <form action="/" method="GET" class="product-search">
+                <!-- <form action="/" method="GET" class="product-search">
                     @csrf
                     <select id="" class="selector-changer">
                         <option value="1">Products</option>
@@ -34,11 +34,11 @@
                     </select><span id="demacator">|</span>
                     <input type="text" name="search" id="product-searcher" placeholder="Search product">
                     <button type="submit" class="btn-button"><i class="fa fa-search"></i> <span>Search</span></button>
-                </form>
-                <div class="minro-component">
+                </form> -->
+                <h1 class="welcome-flash-shower">Welcome {{Auth::guard('web')->user()->company_name}}</h1>
+                <div class="minro-component-mgd">
                     <button class="lang-changer"><i class="fa fa-language"></i></button>
                     <button class="user-account"><i class="fa fa-user"></i></button>
-                    <button class="sign-up-btn"><a href="/register" style="text-decoration:none; color:#FFFFFF;">Sign Up</a></button>
                 </div>
             </div><br><br>
 

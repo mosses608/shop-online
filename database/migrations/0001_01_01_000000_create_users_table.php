@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('contact');
             $table->string('term_policy');
             $table->string('profile')->nullable();
+            $table->boolean('verified')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

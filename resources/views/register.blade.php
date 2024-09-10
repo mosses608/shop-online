@@ -12,7 +12,7 @@
         @csrf
         <label for="">Country or Region:</label><br>
         <select name="region" id="country" style="border-bottom:1.5px solid rgb(162, 195, 224);">
-            <option value="">Choose Region/Country</option>
+            <option value="">--select country--</option>
         </select><br><br>
         <label for="">Email:</label><br>
         <input type="email" name="email" id="" placeholder="Email as a login username" style="border-bottom:1.5px solid rgb(162, 195, 224);" value="{{old('email')}}"><br>
@@ -34,9 +34,10 @@
         <br>
         <label for="">Trade Role:</label><br>
         <select name="trade_role" id="" class="trade_role" style="border-bottom:1.5px solid rgb(162, 195, 224);" value="{{old('trade_role')}}">
-            <option value="">Choose Role</option>
-            <option value="1">Buyer</option>
-            <option value="2">Seller</option>
+            <option value="">--select role--</option>
+            @foreach($roles as $role)
+            <option value="{{$role->id}}">{{$role->role_name}}</option>
+            @endforeach
         </select>
         <br>
         @error('trade_role')

@@ -27,6 +27,7 @@ class User extends Authenticatable
         'term_policy',
         'confirm_password',
         'profile',
+        'verified',
     ];
 
     /**

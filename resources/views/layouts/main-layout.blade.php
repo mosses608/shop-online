@@ -21,10 +21,10 @@
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     </head>
     <body class="font-sans-antialiased">
-        <header class="ajax-wrapper-md-5" id="ajax-wrapper-md-5" style="background-color:#FFFFFF;">
+        <header class="ajax-wrapper-md-5" id="ajax-wrapper-md-5" style="background-color:#FFFFFF; position:absolute;">
             <a href="/"><img src="{{asset('assets/images/kakalaLogo.png')}}" alt="Logo"></a>
             <div class="centered-ajax-wrapper">
-                <form action="/" method="GET" class="product-search">
+                <form action="/explore" method="GET" class="product-search">
                     @csrf
                     <select id="" class="selector-changer">
                         <option value="1">Products</option>
@@ -38,7 +38,11 @@
                 <div class="minro-component">
                     <button class="lang-changer"><i class="fa fa-language"></i></button>
                     <button class="user-account"><i class="fa fa-user"></i></button>
+                    @auth('web')
+                    <button class="sign-up-btn"><a href="/business-dashboard">Return To Dashboard</a></button>
+                    @else
                     <button class="sign-up-btn"><a href="/register" style="text-decoration:none; color:#FFFFFF;">Sign Up</a></button>
+                    @endauth
                 </div>
             </div><br><br>
 
@@ -82,26 +86,310 @@
             </div>
             </center>
             <button class="footer-btn">
+                <span class="message-cover"><i class="fas fa-envelope"></i></span><hr><hr><hr>
                 <span class="comment-wrapper"><i class="fa fa-comment"></i></span><hr><hr><hr>
                 <span class="scrollToTop" onclick="scrollToTop()">&#8593;</span>
             </button>
        </footer>
 
-<script>
-function scrollToTop(){
-    window.scrollTo({
-        top:0,
-        behavior:'smooth',
-    });
-}
+        <script>
+        function scrollToTop(){
+            window.scrollTo({
+                top:0,
+                behavior:'smooth',
+            });
+        }
 
-</script>
+        </script>
+
+        <script>
+            let bagSlide = 0;
+            slideNewBag();
+
+            function slideNewBag(){
+                let bagslides = document.getElementsByClassName("bag-looper-container");
+
+                for (let i = 0; i < bagslides.length; i++) {
+                    bagslides[i].style.display='none';
+                }
+                bagSlide++;
+
+                if(bagSlide > bagslides.length){
+                    bagSlide = 1;
+                }
+                bagslides[bagSlide - 1].style.display='block';
+                setTimeout(slideNewBag,10500);
+            }
+        </script>
+
+        <script>
+            let bfIndex = 0;
+            showbpSlider();
+
+            function showbpSlider(){
+                let bdSlider = document.getElementsByClassName("care-looper-container");
+                for (let i = 0; i < bdSlider.length; i++) {
+                    bdSlider[i].style.display='none';
+                }
+                bfIndex++;
+                if(bfIndex > bdSlider.length){
+                    bfIndex = 1;
+                }
+                bdSlider[bfIndex - 1].style.display='block';
+                setTimeout(showbpSlider,10700);
+            }
+        </script>
+
+        <script>
+            let bookIndex = 0;
+            bookSlideShower()
+
+            function bookSlideShower(){
+                let bookSlides = document.getElementsByClassName("book-looper-container");
+                for (let i = 0; i < bookSlides.length; i++) {
+                    bookSlides[i].style.display='none';
+                }
+                bookIndex++;
+
+                if(bookIndex > bookSlides.length){
+                    bookIndex = 1;
+                }
+                bookSlides[bookIndex - 1].style.display='block';
+                setTimeout(bookSlideShower,11500);
+                
+            }
+        </script>
 
 
-<script>
-    function showCategoryelect(){
-        document.querySelector('.category-all-component').classList.toggle('active');
-    }
-</script>
+        <script>
+            function showCategoryelect(){
+                document.querySelector('.category-all-component').classList.toggle('active');
+            }
+        </script>
+
+        <script>
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                let slides = document.getElementsByClassName("single-loop-container");
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display='none';
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {
+                    slideIndex = 1;
+                }
+                slides[slideIndex - 1].style.display='block';
+                setTimeout(showSlides, 8000);
+            }
+
+        </script>
+
+        <script>
+            function chaneSlide(n) {
+            showSlides(slideIndex += n);
+            }
+
+            function showSlides(n) {
+                let slides = document.getElementsByClassName("single-loop-container");
+                if (n > slides.length) {
+                    slideIndex = 1;
+                }
+                if (n < 1) {
+                    slideIndex = slides.length;
+                }
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display='none';
+                }
+                slides[slideIndex - 1].style.display='block';
+            }
+
+        </script>
+
+        
+        <script>
+            let initialView = 0;
+            viewSlide();
+
+            function viewSlide(){
+                let slideViewer = document.getElementsByClassName("comp-looper-container");
+
+                for (let i = 0; i < slideViewer.length; i++) {
+                    slideViewer[i].style.display='none';
+                }
+                initialView++;
+
+                if(initialView > slideViewer.length){
+                    initialView = 1;
+                }
+
+                slideViewer[initialView - 1].style.display='block';
+
+                setTimeout(viewSlide, 9000);
+
+            }
+        </script>
+
+        
+        <script>
+            let initialIndex = 0;
+            changeSlides();
+
+            function changeSlides(){
+                let slideIndex = document.getElementsByClassName("electr-looper-container");
+                for (let i = 0; i < slideIndex.length; i++) {
+                    slideIndex[i].style.display='none';
+                }
+                initialIndex++;
+
+                if(initialIndex > slideIndex.length){
+                    initialIndex = 1;
+                }
+
+                slideIndex[initialIndex-1].style.display='block';
+                setTimeout(changeSlides,10000);
+            }
+        </script>
+
+        <script>
+            function changeToSlide(n){
+                showNextSlide(slide += n);
+            }
+
+            function showNextSlide(n){
+                let slideshow = document.getElementsByClassName("electr-looper-container");
+                if(n > slideshow.length){
+                    slide = 1;
+                }
+                if(n < 1){
+                    slide = slideshow.length;
+                }
+                for (let i = 0; i < slideshow.length; i++) {
+                    slideshow[i].style.display='none';
+                }
+
+                slideshow[slide-1].style.display='block';
+            }
+        </script>
+
+        <script>
+            let slideShowIndex =0;
+            showNewSlideIndex();
+
+            function showNewSlideIndex(){
+                let slideContainer = document.getElementsByClassName("lady-fash-looper-container");
+                for (let i = 0; i < slideContainer.length; i++) {
+                    slideContainer[i].style.display='none';           
+                }
+
+                slideShowIndex++;
+
+                if(slideShowIndex > slideContainer.length){
+                    slideShowIndex = 1;
+                }
+                slideContainer[slideShowIndex - 1].style.display='block';
+
+                setTimeout(showNewSlideIndex,11000);
+            }
+        </script>
+
+        <script>
+            let indexSlide = 0;
+            indexSlider();
+
+            function indexSlider(){
+                let allSlides = document.getElementsByClassName("men-fash-looper-container");
+                 for (let i = 0; i < allSlides.length; i++) {
+                    allSlides[i].style.display='none';
+                 }
+
+                 indexSlide++
+
+                 if(indexSlide > allSlides.length){
+                    indexSlide = 1;
+                 }
+                 allSlides[indexSlide - 1].style.display='block';
+                 setTimeout(indexSlider,12000);
+            }
+        </script>
+
+        <script>
+            let initialkitSlide = 0;
+            kitchomSlider();
+
+            function kitchomSlider(){
+                let kitcSlide = document.getElementsByClassName("kitc-hom-looper-container");
+
+                for (let i = 0; i < kitcSlide.length; i++) {
+                    kitcSlide[i].style.display='none';
+                }
+                initialkitSlide++;
+
+                if(initialkitSlide > kitcSlide.length){
+                    initialkitSlide = 1;
+                }
+                kitcSlide[initialkitSlide - 1].style.display='block';
+                setTimeout(kitchomSlider,13000);
+            }
+        </script>
+
+        <script>
+            let showIndex = 0;
+            showIndexSlider();
+
+            function showIndexSlider(){
+                let slideShoeViewer = document.getElementsByClassName("shoes-looper-container");
+
+                for (let i = 0; i < slideShoeViewer.length; i++) {
+                    slideShoeViewer[i].style.display='none';
+                }
+                showIndex++;
+                
+                if(showIndex > slideShoeViewer.length){
+                    showIndex = 1;
+                }
+                slideShoeViewer[showIndex - 1].style.display='block';
+                setTimeout(showIndexSlider,14000);
+            }
+        </script>
+
+        <script>
+            let spareIndex = 0;
+            spareSlideView();
+
+            function spareSlideView(){
+                let spareSlide = document.getElementsByClassName("spare-looper-container");
+
+                for (let i = 0; i < spareSlide.length; i++) {
+                    spareSlide[i].style.display='none';  
+                }
+                spareIndex++;
+
+                if(spareIndex > spareSlide.length){
+                    spareIndex = 1;
+                }
+                spareSlide[spareIndex - 1].style.display='block'; 
+                setTimeout(spareSlideView,15000);
+            }
+        </script>
+
+        <script>
+            let sportIndex = 0;
+            sportSlideShow(); 
+
+            function sportSlideShow(){
+                let sportSlides = document.getElementsByClassName("sportoutdoor-looper-container");
+                for (let i = 0; i < sportSlides.length; i++) {
+                    sportSlides[i].style.display='none';
+                }
+                sportIndex++;
+                if(sportIndex > sportSlides.length){
+                    sportIndex = 1; 
+                }
+                sportSlides[sportIndex - 1].style.display='block';
+                setTimeout(sportSlideShow,15500);
+            }
+        </script>
     </body>
 </html>

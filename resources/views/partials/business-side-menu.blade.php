@@ -6,7 +6,7 @@
         <a href="#"><span id="left-side-nav"><i class="fa fa-comments"></i></span> <span id="middle-nav">Comments</span> <span class="right-nav"><i class="fa fa-angle-right"></i></span></a>
     </div><br>
     <div class="profile-nav-manager">
-        <a href="#"><span id="left-side-nav"><i class="fa fa-user"></i></span> <span id="middle-nav">Account Setting</span> <span class="right-nav"><i class="fa fa-angle-right"></i></span></a>
+        <a href="#"><span id="left-side-nav"><i class="fa fa-cog"></i></span> <span id="middle-nav">Account Setting</span> <span class="right-nav"><i class="fa fa-angle-right"></i></span></a>
     </div><br>
 
     <div class="product-manager">

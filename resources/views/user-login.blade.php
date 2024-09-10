@@ -6,6 +6,8 @@
 <!-- <x-success_login /> -->
 <x-insuccess_login />
 
+<x-flash_msg />
+
 <center>
     <form action="/authenticate" method="POST" class="new-md5-wrapper">
         @csrf
