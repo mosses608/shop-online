@@ -58,23 +58,33 @@
     <form method="POST" action="/carts" class="main-viewer-imploder" id="main-viewer-imploder">
         @csrf
         <div class="popUp-Viewer">{{$allproduct->product_name}} <i class="fa fa-angle-down"></i></div>
-        
+
+        <!-- Product Images -->
         <div class="product-00">
             <img src="{{ asset('storage/' . $allproduct->pictures1) }}" alt="{{ $allproduct->product_name }}" 
-            class="clickable-image" data-product-id="{{ $allproduct->product_id }}" data-image="{{ asset('storage/' . $allproduct->pictures1) }}" data-price="{{$allproduct->price}}">
+                class="clickable-image" 
+                data-product-id="{{ $allproduct->product_id }}" 
+                data-image="{{ asset('storage/' . $allproduct->pictures1) }}" 
+                data-price="{{$allproduct->unit_price}}">
         </div>
         
         <div class="product-00">
             <img src="{{ asset('storage/' . $allproduct->pictures2) }}" alt="{{ $allproduct->product_name }}" 
-            class="clickable-image" data-product-id="{{ $allproduct->product_id }}" data-image="{{ asset('storage/' . $allproduct->pictures2) }}" data-price="{{$allproduct->price}}">
+                class="clickable-image" 
+                data-product-id="{{ $allproduct->product_id }}" 
+                data-image="{{ asset('storage/' . $allproduct->pictures2) }}" 
+                data-price="{{$allproduct->unit_price}}">
         </div>
         
         <div class="product-00">
             <img src="{{ asset('storage/' . $allproduct->pictures3) }}" alt="{{ $allproduct->product_name }}" 
-            class="clickable-image" data-product-id="{{ $allproduct->product_id }}" data-image="{{ asset('storage/' . $allproduct->pictures3) }}" data-price="{{$allproduct->price}}">
+                class="clickable-image" 
+                data-product-id="{{ $allproduct->product_id }}" 
+                data-image="{{ asset('storage/' . $allproduct->pictures3) }}" 
+                data-price="{{$allproduct->unit_price}}">
         </div>
 
-        <input type="hidden" name="customer_name" value="Mohammed" id="customer_name">
+        <input type="hidden" name="customer_name" value="0710066540" id="customer_name">
         <input type="hidden" name="product_id" value="{{$allproduct->product_id}}" id="productInput">
         <input type="hidden" name="selected_image" id="selectedImage">
         <input type="hidden" name="price" id="priceInput">
@@ -88,8 +98,13 @@
             </select>
         </div><br>
 
-        <center><button type="submit" class="submit-cart-btn"><i class="fa fa-shopping-cart"></i> Add to cart</button></center>
+        <center>
+            <button type="submit" class="submit-cart-btn"><i class="fa fa-shopping-cart"></i> Add to cart</button>
+        </center>
     </form>
+
+
+
 </div>
 
 <div class="line-breaker-comp">
@@ -477,29 +492,30 @@
         }
     </script>
 
+    <style>
+        .selected {
+        border: 3px solid #007bff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); 
+    }
+    </style>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
         const images = document.querySelectorAll('.clickable-image');
 
         images.forEach(image => {
             image.addEventListener('click', function () {
+               
+                images.forEach(img => img.style.border = 'none');
 
-                images.forEach(img => img.classList.remove('selected-image'));
+                this.style.border = '2px solid #00f';
 
-                this.classList.add('selected-image');
-
-                const selectedImage = this.getAttribute('data-image');
-                document.getElementById('selectedImage').value = selectedImage;
-
-                const productId = this.getAttribute('data-product-id');
-                document.getElementById('productInput').value = productId;
-
-                const price = this.getAttribute('data-price');
-                document.getElementById('priceInput').value = price;
+                document.getElementById('selectedImage').value = this.dataset.image;
+                document.getElementById('priceInput').value = this.dataset.price;
             });
         });
     });
-
     </script>
 <br><br>
 @stop

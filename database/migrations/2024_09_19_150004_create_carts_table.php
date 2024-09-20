@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('customer_name');
             $table->string('product_id');
-            $table->string('quantity');
+            $table->integer('quantity');
             $table->string('selected_image')->nullable();
-            $table->string('price');
+            $table->decimal('price', 8, 2); 
             $table->timestamps();
 
-            // $table->foreign('product_id')->references('product_id')->on('products')->onDelete('cascade');
+            // $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+
         });
     }
 

@@ -11,8 +11,18 @@ Route::post('/authenticate', [App\Http\Controllers\UserController::class, 'authe
 Route::get('/business-dashboard', [App\Http\Controllers\UserController::class, 'business_dashboard'])->middleware('auth');
 Route::get('/post-product', [App\Http\Controllers\UserController::class, 'post_product'])->middleware('auth');
 Route::post('/auth/invalidate', [App\Http\Controllers\UserController::class, 'auth_logout'])->middleware('auth');
-Route::post('/products', [App\Http\Controllers\ProductController::class, 'store_products'])->middleware('auth');
+Route::post('/products', [App\Http\Controllers\ProductController::class, 'store_products'])->name('products')->middleware('auth');
 Route::get('/explore-single/{allproduct}', [App\Http\Controllers\ProductController::class, 'single_product']);
 Route::post('/carts', [App\Http\Controllers\ProductController::class, 'store_carts']);
-route::get('/my-carts', [App\Http\Controllers\ProductController::class, 'carts_page']);
+Route::get('/my-carts', [App\Http\Controllers\ProductController::class, 'carts_page']);
 Route::post('/comments', [App\Http\Controllers\ProductController::class, 'post_comments']);
+Route::put('/edit/discount/{product}', [App\Http\Controllers\ProductController::class, 'edit_discount'])->middleware('auth');
+Route::delete('/cart-delete/{mycart}', [App\Http\Controllers\ProductController::class, 'delete_cart']);
+
+//STRIPE INTEGRATION
+Route::post('/stripe/post', [App\Http\Controllers\StripeController::class, 'stripePost'])->name('stripe.post');
+
+//PAYPAL INTEGRATION
+Route::post('/paypal-checkout', [App\Http\Controllers\PaypalController::class, 'paypal_pay']);
+Route::get('/success', [App\Http\Controllers\PaypalController::class, 'success']);
+Route::get('/error', [App\Http\Controllers\PaypalController::class, 'error']);

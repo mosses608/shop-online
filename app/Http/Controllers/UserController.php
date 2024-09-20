@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\Cart;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\Product;
@@ -22,10 +23,12 @@ class UserController extends Controller
         return view('register', compact('roles'));
     }
     public function explore(){
+        $carts = Cart::all();
+        $categories = Category::all();
         $nowDate = Carbon::now()->format('Y-m-d');
         $exploreAllProducts = Product::latest()->paginate(5);
         $allproducts = Product::latest()->get();
-        return view('explore', compact('allproducts','exploreAllProducts','nowDate'));
+        return view('explore', compact('allproducts','exploreAllProducts','nowDate','categories','carts'));
     }
     public function login(){
         return view('user-login');

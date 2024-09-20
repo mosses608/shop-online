@@ -7,7 +7,10 @@
     <marquee behavior="smooth" direction="left">
     <div class="babay-class-container-md1">
         <a href="/explore">All</a>
-        <a href="#">Babies Fashion</a>
+        @foreach($categories as $category)
+        <a href="/category/{{$category->category_name}}">{{$category->category_name}}</a>
+        @endforeach
+        <!-- <a href="#">Babies Fashion</a>
         <a href="#">Bags</a>
         <a href="#">Beauty & Personal Care</a>
         <a href="#">Books</a>
@@ -19,12 +22,13 @@
         <a href="#">Shoes</a>
         <a href="#">Spare Parts</a>
         <a href="#">Sports & Outdoors</a>
-        <a href="#">Software</a>
+        <a href="#">Software</a> -->
     </div>
     </marquee>
 </div>
 <div class="median-container-flip">
     <h1 id="all-category-wrapp"><a href="#"><strong>All Categories</strong></a></h1>
+    <button class="cart-viewer"><a href="/my-carts"><i class="fa fa-shopping-cart"></i> <span>{{count($carts)}}</span>  </a></button>
     <div class="media-view-container">
         @foreach($exploreAllProducts as $allproduct)
         <div class="single-looper">

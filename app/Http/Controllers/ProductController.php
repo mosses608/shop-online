@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use App\Models\Cart;
 use App\Models\User;
 use App\Models\Comment;
 use App\Models\Product;
@@ -71,22 +72,26 @@ class ProductController extends Controller
 
     public function store_carts(Request $request){
         $cartDetails = $request->validate([
-            'customer_name' => 'required',
+            'customer_name' => 'required|string',
             'product_id' => 'required',
-            'quantity' => 'required',
+            'quantity' => 'required|integer',
             'selected_image' => 'required',
-            'price' => 'required'
+            'price' => 'required|numeric'
         ]);
 
         Cart::create($cartDetails);
 
-        dd($request->all());
+        // dd($request->all());
 
-        // return redirect('/my-carts')->with('cart_message','New cart added successfully!');
+        return redirect('/my-carts')->with('cart_message','New cart added successfully!');
     }
 
     public function carts_page(){
-        return view('my-carts');
+        $allcarts = Cart::orderBy('id','asc')->get();
+        $categories = Category::all();
+        $products = Product::all();
+        $carts = Cart::latest()->get();
+        return view('my-carts', compact('carts','products','categories','allcarts'));
     }
 
     public function post_comments(Request $request){
@@ -101,5 +106,20 @@ class ProductController extends Controller
         Comment::create($commentsDetails);
 
         return redirect()->back()->with('success_comment','Comment sent successfully!');
+    }
+
+    public function edit_discount(Request $request, Product $product){
+        $discountData = $request->validate([
+            'discount' => 'required',
+        ]);
+
+        $product->update($discountData);
+
+        return redirect()->back();
+    }
+
+    public function delete_cart(Request $request, Cart $mycart){
+        $mycart->delete();
+        return redirect()->back();
     }
 }

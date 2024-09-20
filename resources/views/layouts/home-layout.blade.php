@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{__('Shop | Kakala')}}</title>
+        <title>{{__('Safe | Shopping | Kakala')}}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -36,6 +36,7 @@
                     <button type="submit" class="btn-button"><i class="fa fa-search"></i> <span>Search</span></button>
                 </form>
                 <div class="minro-component">
+                    <!-- <a href="/my-carts" class="my-carts">12 <i class="fa fa-shopping-cart"><i><a> -->
                     <button class="lang-changer"><i class="fa fa-language"></i></button>
                     <button class="user-account"><i class="fa fa-user"></i></button>
                     @auth('web')
